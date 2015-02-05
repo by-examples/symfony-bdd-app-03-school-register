@@ -11,6 +11,7 @@ before_install:
   - groups travis
   - hostname -f
   - cat /etc/passwd
+  - cat /etc/*rele*
   - sudo apt-get update -y
 
 install:
