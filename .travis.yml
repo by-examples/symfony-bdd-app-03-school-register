@@ -28,6 +28,7 @@ install:
   - sudo puppet module install gajdaw-symfony
   - sudo ls /etc/puppet/modules
   - sudo puppet apply puppet/manifest.pp
+  - sudo apache2 -v
 
 
 #  Change the default Apache's web page into APP
