@@ -27,7 +27,7 @@ install:
 #  Install Apache & Php & MySQL
   - sudo puppet module install gajdaw-symfony
   - sudo ls /etc/puppet/modules
-  - sudo puppet apply -e 'include symfony'
+  - sudo puppet apply puppet/manifest.pp
 
 
 #  Change the default Apache's web page into APP

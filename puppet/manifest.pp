@@ -1,11 +1,4 @@
-class { 'php5':  username => 'travis'; }
-
-class { 'mysql::server': }
-
-mysql::db { 'symfony':
-  user     => 'symfony',
-  password => 'symfony',
-  ensure   => present,
-  charset  => 'utf8',
-  require  => Class['mysql::server']
+class { 'symfony':
+    username => 'travis',
+    directory => '/home/travis/build/by-examples/symfony-bdd-app-03-school-register/web'
 }
