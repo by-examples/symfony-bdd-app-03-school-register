@@ -25,7 +25,7 @@ install:
 
 
 #  Install Apache & Php & MySQL
-  - sudo puppet module install symfony
+  - sudo puppet module install gajdaw-symfony
   - sudo ls /etc/puppet/modules
   - sudo puppet apply -e 'include symfony'
 
