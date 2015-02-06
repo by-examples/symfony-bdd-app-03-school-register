@@ -55,13 +55,13 @@ before_script:
 
   - ./initialize.bash
 
-  - [ -d "/tmp" ] && ls -la /tmp
-  - [ -d "/tmp/symfony2app" ] && ls -la /tmp/symfony2app
-  - [ -d "/tmp/symfony2app/app" ] && ls -la /tmp/symfony2app/app
-  - [ -d "/tmp/symfony2app/app/cache" ] && ls -la /tmp/symfony2app/app/cache
-  - [ -d "/tmp/symfony2app/app/cache/sessions" ] && ls -la /tmp/symfony2app/app/cache/sessions
-  - [ -d "/tmp/symfony2app/app/logs" ] && ls -la /tmp/symfony2app/app/logs
-  - [ -d "/tmp/symfony2app/app/vendor" ] && ls -la /tmp/symfony2app/app/vendor
+  - '[ -d "/tmp" ] && ls -la /tmp'
+  - '[ -d "/tmp/symfony2app" ] && ls -la /tmp/symfony2app'
+  - '[ -d "/tmp/symfony2app/app" ] && ls -la /tmp/symfony2app/app'
+  - '[ -d "/tmp/symfony2app/app/cache" ] && ls -la /tmp/symfony2app/app/cache'
+  - '[ -d "/tmp/symfony2app/app/cache/sessions" ] && ls -la /tmp/symfony2app/app/cache/sessions'
+  - '[ -d "/tmp/symfony2app/app/logs" ] && ls -la /tmp/symfony2app/app/logs'
+  - '[ -d "/tmp/symfony2app/app/vendor" ] && ls -la /tmp/symfony2app/app/vendor'
 
 
 
