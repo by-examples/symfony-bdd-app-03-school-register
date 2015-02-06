@@ -61,7 +61,7 @@ before_script:
   - '[ -d "/tmp/symfony2app/app/cache" ] && ls -la /tmp/symfony2app/app/cache'
   - '[ -d "/tmp/symfony2app/app/cache/sessions" ] && ls -la /tmp/symfony2app/app/cache/sessions'
   - '[ -d "/tmp/symfony2app/app/logs" ] && ls -la /tmp/symfony2app/app/logs'
-  - '[ -d "/tmp/symfony2app/app/vendor" ] && ls -la /tmp/symfony2app/app/vendor'
+#  - '[ -d "/tmp/symfony2app/app/vendor" ] && ls -la /tmp/symfony2app/app/vendor'
 
 
 
