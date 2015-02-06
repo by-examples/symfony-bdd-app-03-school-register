@@ -4,16 +4,18 @@ php:
   - 5.5
 
 before_install:
-  - php --info
-  - sudo pwd
-  - sudo ls -la
-  - whoami
-  - groups travis
-  - hostname -f
-  - cat /etc/passwd
-  - cat /etc/*rele*
-  - sudo apt-get update -y
-  - sudo dpkg --get-selections
+#
+# DEBUG
+#  - php --info
+#  - sudo pwd
+#  - sudo ls -la
+#  - whoami
+#  - groups travis
+#  - hostname -f
+#  - cat /etc/passwd
+#  - cat /etc/*rele*
+#  - sudo apt-get update -y
+#  - sudo dpkg --get-selections
 
 
 install:
@@ -24,64 +26,38 @@ install:
   - sudo dpkg -i puppetlabs-release-precise.deb
   - sudo apt-get update -y
   - sudo apt-get install puppet -y
-  - sudo puppet --version
-  - sudo facter
+
+# DEBUG
+#  - sudo puppet --version
+#  - sudo facter
 
 
 #  Install Apache & Php & MySQL
   - sudo puppet module install gajdaw-symfony
-  - sudo ls /etc/puppet/modules
   - sudo puppet apply puppet/manifest.pp
-  - sudo apache2 -v
-  - sudo dpkg --get-selections
 
+# DEBUG
+#  - sudo ls /etc/puppet/modules
+#  - sudo apache2 -v
+#  - sudo dpkg --get-selections
 
-#  Change the default Apache's web page into APP
-#  - sudo ls -ls /var/
-#  - sudo ls -ls /var/www
-#  - sudo ls -ls /var/www/html
-
-#  - sudo rm -rf /var/www/html
-#  - sudo mkdir -p /var/www
-#  - sudo ln -s  "$(pwd)/web" /var/www/html
-
-#  - sudo ls -ls /var/
-#  - sudo ls -ls /var/www
-#  - sudo ls -ls /var/www/html
-
-#  - sudo /etc/init.d/apache2 restart
 
 before_script:
 
   - ./initialize.bash
 
-  - '[ -d "/tmp" ] && ls -la /tmp'
-  - '[ -d "/tmp/symfony2app" ] && ls -la /tmp/symfony2app'
-  - '[ -d "/tmp/symfony2app/app" ] && ls -la /tmp/symfony2app/app'
-  - '[ -d "/tmp/symfony2app/app/cache" ] && ls -la /tmp/symfony2app/app/cache'
-  - '[ -d "/tmp/symfony2app/app/cache/sessions" ] && ls -la /tmp/symfony2app/app/cache/sessions'
-  - '[ -d "/tmp/symfony2app/app/logs" ] && ls -la /tmp/symfony2app/app/logs'
-#  - '[ -d "/tmp/symfony2app/app/vendor" ] && ls -la /tmp/symfony2app/app/vendor'
-
+# DEBUG
+#
+#  - '[ -d "/tmp" ] && ls -la /tmp'
+#  - '[ -d "/tmp/symfony2app" ] && ls -la /tmp/symfony2app'
+#  - '[ -d "/tmp/symfony2app/app" ] && ls -la /tmp/symfony2app/app'
+#  - '[ -d "/tmp/symfony2app/app/cache" ] && ls -la /tmp/symfony2app/app/cache'
+#  - '[ -d "/tmp/symfony2app/app/cache/sessions" ] && ls -la /tmp/symfony2app/app/cache/sessions'
+#  - '[ -d "/tmp/symfony2app/app/logs" ] && ls -la /tmp/symfony2app/app/logs'
 
 
   - composer self-update
   - composer install --no-interaction
-#  - pwd
-#  - ls -la
-
-#  - sudo chmod -R 777 /tmp/symfony2app/app/cache /tmp/symfony2app/app/logs
-#  - app/console cache:warmup --env=dev
-#  - app/console cache:warmup --env=prod
-#  - sudo chmod -R 777 /tmp/symfony2app/app/cache /tmp/symfony2app/app/logs
-
-#  - ls -la /tmp/symfony2app/app/cache
-#  - ls -la /tmp/symfony2app/app/logs
-
-
-#  - chmod o+w /tmp/symfony2app/app/logs
-#  - ls -la /tmp/symfony2app/app
-
 
   - ./reload.bash
 
@@ -103,14 +79,12 @@ after_failure:
 
 #  Print app's log
   - sudo ls -la /tmp/symfony2app/app/logs
-#  - sudo ls -la /tmp/symfony2app/app/logs/prod
-#  - sudo ls -la /tmp/symfony2app/app/logs/prod/log
   - sudo cat /tmp/symfony2app/app/logs/dev.log
 #  - cat /tmp/symfony2app/app/logs/prod/prod.log
 
 #  Print Apache's log
-#  - sudo ls -la /var/
-#  - sudo ls -la /var/log/
+  - sudo ls -la /var/
+  - sudo ls -la /var/log/
   - sudo ls -la /var/log/apache2/
   - sudo cat /var/log/apache2/access.log
   - sudo cat /var/log/apache2/error.log
