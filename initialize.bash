@@ -13,8 +13,6 @@ fi
 
 WHOAMI=`whoami`
 
-mkdir -p /tmp/symfony2app/app/
-
 sudo mkdir -p /tmp/symfony2app/app/cache
 sudo mkdir -p /tmp/symfony2app/app/logs
 sudo mkdir -p /tmp/symfony2app/app/cache/sessions

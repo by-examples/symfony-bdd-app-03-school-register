@@ -53,37 +53,35 @@ install:
 
 before_script:
 
+  - ./initialize.bash
+
+  - [ -d "/tmp" ] && ls -la /tmp
+  - [ -d "/tmp/symfony2app" ] && ls -la /tmp/symfony2app
+  - [ -d "/tmp/symfony2app/app" ] && ls -la /tmp/symfony2app/app
+  - [ -d "/tmp/symfony2app/app/cache" ] && ls -la /tmp/symfony2app/app/cache
+  - [ -d "/tmp/symfony2app/app/cache/sessions" ] && ls -la /tmp/symfony2app/app/cache/sessions
+  - [ -d "/tmp/symfony2app/app/logs" ] && ls -la /tmp/symfony2app/app/logs
+  - [ -d "/tmp/symfony2app/app/vendor" ] && ls -la /tmp/symfony2app/app/vendor
+
+
+
   - composer self-update
-
-  - mkdir -p /tmp/symfony2app/app/cache
-  - mkdir -p /tmp/symfony2app/app/logs
-  - mkdir -p /tmp/symfony2app/vendor/
-
-  - ls -la /tmp
-  - ls -la /tmp/symfony2app
-  - ls -la /tmp/symfony2app/app
-  - ls -la /tmp/symfony2app/app/cache
-  - ls -la /tmp/symfony2app/app/logs
-  - ls -la /tmp/symfony2app/vendor
-
   - composer install --no-interaction
-  - pwd
-  - ls -la
+#  - pwd
+#  - ls -la
 
-  - sudo chmod -R 777 /tmp/symfony2app/app/cache /tmp/symfony2app/app/logs
+#  - sudo chmod -R 777 /tmp/symfony2app/app/cache /tmp/symfony2app/app/logs
 #  - app/console cache:warmup --env=dev
-  - app/console cache:warmup --env=prod
-  - sudo chmod -R 777 /tmp/symfony2app/app/cache /tmp/symfony2app/app/logs
+#  - app/console cache:warmup --env=prod
+#  - sudo chmod -R 777 /tmp/symfony2app/app/cache /tmp/symfony2app/app/logs
 
-  - ls -la /tmp/symfony2app/app/cache
-  - ls -la /tmp/symfony2app/app/logs
+#  - ls -la /tmp/symfony2app/app/cache
+#  - ls -la /tmp/symfony2app/app/logs
 
 
-  - chmod o+w /tmp/symfony2app/app/logs
-  - ls -la /tmp/symfony2app/app
+#  - chmod o+w /tmp/symfony2app/app/logs
+#  - ls -la /tmp/symfony2app/app
 
-#  - mysql -u root < 00-extra/db/create-empty-database.sql
-#  - app/console doctrine:schema:update --force
 
   - ./reload.bash
 
