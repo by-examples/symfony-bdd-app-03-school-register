@@ -13,6 +13,7 @@ before_install:
   - cat /etc/passwd
   - cat /etc/*rele*
   - sudo apt-get update -y
+  - sudo dpkg --get-selections
 
 
 install:
@@ -24,6 +25,7 @@ install:
   - sudo apt-get update -y
   - sudo apt-get install puppet -y
   - sudo puppet --version
+  - sudo facter
 
 
 #  Install Apache & Php & MySQL
@@ -31,22 +33,23 @@ install:
   - sudo ls /etc/puppet/modules
   - sudo puppet apply puppet/manifest.pp
   - sudo apache2 -v
+  - sudo dpkg --get-selections
 
 
 #  Change the default Apache's web page into APP
-  - sudo ls -ls /var/
-  - sudo ls -ls /var/www
-  - sudo ls -ls /var/www/html
+#  - sudo ls -ls /var/
+#  - sudo ls -ls /var/www
+#  - sudo ls -ls /var/www/html
 
-  - sudo rm -rf /var/www/html
-  - sudo mkdir -p /var/www
-  - sudo ln -s  "$(pwd)/web" /var/www/html
+#  - sudo rm -rf /var/www/html
+#  - sudo mkdir -p /var/www
+#  - sudo ln -s  "$(pwd)/web" /var/www/html
 
-  - sudo ls -ls /var/
-  - sudo ls -ls /var/www
-  - sudo ls -ls /var/www/html
+#  - sudo ls -ls /var/
+#  - sudo ls -ls /var/www
+#  - sudo ls -ls /var/www/html
 
-  - sudo /etc/init.d/apache2 restart
+#  - sudo /etc/init.d/apache2 restart
 
 before_script:
 
