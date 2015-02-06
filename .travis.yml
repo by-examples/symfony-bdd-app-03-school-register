@@ -61,11 +61,11 @@ before_script:
 
   - ./reload.bash
 
-  - ls -la /tmp/symfony2app/app
-  - sudo chmod -R 777 /tmp/symfony2app/app/cache /tmp/symfony2app/app/logs
-  - ls -la /tmp/symfony2app/app
-  - chown -R travis:travis /tmp/symfony2app
-  - ls -la /tmp/symfony2app/app
+#  - ls -la /tmp/symfony2app/app
+#  - sudo chmod -R 777 /tmp/symfony2app/app/cache /tmp/symfony2app/app/logs
+#  - ls -la /tmp/symfony2app/app
+#  - chown -R travis:travis /tmp/symfony2app
+#  - ls -la /tmp/symfony2app/app
 
   - sleep 5
 
