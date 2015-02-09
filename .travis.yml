@@ -21,6 +21,8 @@ before_install:
   - sudo dpkg --get-selections
   - which pwd
 
+  - sudo pwd > travis-pwd.txt
+
 
 install:
 
