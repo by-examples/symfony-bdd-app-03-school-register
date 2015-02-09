@@ -2,13 +2,14 @@
 # It was not tested on other hosts
 #
 
-$pwd = generate('/bin/pwd')
+$tmp_pwd = generate('/bin/bash', '-c', 'eval echo "~travis"')
+$final_pwd = inline_template('<%= @tmp_pwd.strip %>')
 
-notify { "Command /bin/pwd returns: ${pwd}": }
+notify { "FINAL PWD: ${final_pwd}": }
 
 class { 'symfony':
     username        => 'travis',
-    directory       => "${pwd}/web",
+    directory       => "${final_pwd}/web",
     withEnvironment => false,
     withNodejs      => false,
     withAllPhars    => false,
