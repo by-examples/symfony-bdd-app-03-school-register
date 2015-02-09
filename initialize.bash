@@ -16,6 +16,7 @@ WHOAMI=`whoami`
 sudo mkdir -p /tmp/symfony2app/app/cache
 sudo mkdir -p /tmp/symfony2app/app/logs
 sudo mkdir -p /tmp/symfony2app/app/cache/sessions
+sudo mkdir -p /tmp/symfony2app/vendor
 
 sudo chmod -R 0777 /tmp/symfony2app
 sudo chown -R "${WHOAMI}:${WHOAMI}" /tmp/symfony2app
