@@ -10,7 +10,7 @@
 #
 # The file travis-config.txt is created in .travis.yml
 #
-$tmp_pwd = generate('/bin/cat', 'travis-config.txt')
+$tmp_pwd = generate('/bin/cat', '/tmp/travis-pwd.txt')
 $final_pwd = inline_template('<%= @tmp_pwd.strip %>')
 notify { "FINAL PWD: ${final_pwd}": }
 

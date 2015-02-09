@@ -7,6 +7,11 @@ php:
 #  - PUPPET_VERSION=3.7.4
 
 before_install:
+
+# This file is necessary for travis.pp manifest
+# We want to avoid hardcoding the path to web
+  - sudo pwd > /tmp/travis-pwd.txt
+
 #
 # DEBUG
   - php --info
@@ -20,8 +25,8 @@ before_install:
   - sudo apt-get update -y
   - sudo dpkg --get-selections
   - which pwd
+  - cat /tmp/travis-pwd.txt
 
-  - sudo pwd > travis-pwd.txt
 
 
 install:
