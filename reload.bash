@@ -12,7 +12,6 @@ then
 fi
 
 mysql -u root < 00-extra/db/create-empty-database.sql
-sleep 5
 
 php app/console cache:clear --env=prod
 php app/console cache:warmup --env=prod

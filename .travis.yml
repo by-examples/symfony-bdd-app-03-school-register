@@ -82,7 +82,7 @@ before_script:
 
 after_failure:
 
-#  Print app's log
+#  Print web dir
   - sudo ls -la /var
   - sudo ls -la /var/www
   - sudo ls -la /var/html
