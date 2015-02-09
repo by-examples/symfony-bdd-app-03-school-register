@@ -6,17 +6,17 @@ php:
 before_install:
 #
 # DEBUG
-#  - php --info
-#  - sudo pwd
-#  - sudo ls -la
-#  - whoami
-#  - groups travis
-#  - hostname -f
-#  - cat /etc/passwd
-#  - cat /etc/*rele*
-#  - sudo apt-get update -y
-#  - sudo dpkg --get-selections
-#  - which pwd
+  - php --info
+  - sudo pwd
+  - sudo ls -la
+  - whoami
+  - groups travis
+  - hostname -f
+  - cat /etc/passwd
+  - cat /etc/*rele*
+  - sudo apt-get update -y
+  - sudo dpkg --get-selections
+  - which pwd
 
 
 install:

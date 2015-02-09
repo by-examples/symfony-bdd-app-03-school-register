@@ -6,7 +6,7 @@ $pwd = generate('/bin/pwd')
 
 class { 'symfony':
     username        => 'travis',
-    directory       => $pwd,
+    directory       => "${pwd}/web",
     withEnvironment => false,
     withNodejs      => false,
     withAllPhars    => false,
