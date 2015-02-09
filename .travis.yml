@@ -4,6 +4,7 @@ php:
   - 5.5
 
 before_install:
+  - which pwd
 #
 # DEBUG
 #  - php --info
@@ -34,7 +35,7 @@ install:
 
 #  Install Apache & Php & MySQL
   - sudo puppet module install gajdaw-symfony
-  - sudo puppet apply puppet/manifest.pp
+  - sudo puppet apply puppet/travis.pp
 
 # DEBUG
 #  - sudo ls /etc/puppet/modules
