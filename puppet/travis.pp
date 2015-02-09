@@ -4,6 +4,8 @@
 
 $pwd = generate('/bin/pwd')
 
+notify { "Command /bin/pwd returns: ${pwd}": }
+
 class { 'symfony':
     username        => 'travis',
     directory       => "${pwd}/web",
