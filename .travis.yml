@@ -73,6 +73,11 @@ before_script:
 after_failure:
 
 #  Print app's log
+  - sudo ls -la /var
+  - sudo ls -la /var/www
+  - sudo ls -la /var/html
+
+#  Print app's log
   - sudo ls -la /tmp/symfony2app/app/logs
   - sudo cat /tmp/symfony2app/app/logs/dev.log
 #  - cat /tmp/symfony2app/app/logs/prod/prod.log
@@ -89,7 +94,7 @@ script:
 #  When debugging use just one test and dump the contents
 #  - bin/behat --verbose features/home.feature
 
-  - bin/behat --verbose --stop-on-failure
+  - bin/behat -vvv --format pretty
 
 notifications:
   email: false
