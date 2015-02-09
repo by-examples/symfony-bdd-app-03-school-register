@@ -3,8 +3,8 @@ language: php
 php:
   - 5.5
 
-env:
-  - PUPPET_VERSION=3.7.4
+#env:
+#  - PUPPET_VERSION=3.7.4
 
 before_install:
 #
@@ -26,10 +26,10 @@ install:
 
 #  Install latest version of Puppet
 #  Default version 2.7 does not allow to use modules
-#  - sudo wget https://apt.puppetlabs.com/puppetlabs-release-precise.deb
-#  - sudo dpkg -i puppetlabs-release-precise.deb
-#  - sudo apt-get update -y
-#  - sudo apt-get install puppet -y
+  - sudo wget https://apt.puppetlabs.com/puppetlabs-release-precise.deb
+  - sudo dpkg -i puppetlabs-release-precise.deb
+  - sudo apt-get update -y
+  - sudo apt-get install puppet -y
 
 # DEBUG
   - sudo puppet --version
