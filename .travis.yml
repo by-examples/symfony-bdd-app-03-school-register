@@ -4,7 +4,6 @@ php:
   - 5.5
 
 before_install:
-  - which pwd
 #
 # DEBUG
 #  - php --info
@@ -17,6 +16,7 @@ before_install:
 #  - cat /etc/*rele*
 #  - sudo apt-get update -y
 #  - sudo dpkg --get-selections
+#  - which pwd
 
 
 install:
